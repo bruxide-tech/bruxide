@@ -31,6 +31,7 @@ import {
   AccentColor, 
   LayoutType 
 } from './types';
+import { GoogleAd } from './components/GoogleAd';
 
 const STORAGE_KEY = 'quickpost_designs';
 const PRESETS_KEY = 'quickpost_presets';
@@ -797,6 +798,15 @@ export default function App() {
                     </div>
                   )}
                 </div>
+
+                {/* Sidebar Ad Unit */}
+                <div className="p-6 border-t border-gray-100 bg-gray-50/30">
+                  <GoogleAd 
+                    slot="sidebar-ad" 
+                    format="rectangle"
+                    responsive={false}
+                  />
+                </div>
               </motion.aside>
             )}
           </AnimatePresence>
@@ -1048,6 +1058,13 @@ export default function App() {
             </button>
           ))}
         </div>
+
+        {/* Home Page Ad Banner */}
+        <GoogleAd 
+          slot="home-banner" 
+          className="mt-12"
+          format="auto"
+        />
       </section>
 
       {/* Generator Modal */}
@@ -1194,6 +1211,13 @@ export default function App() {
               </div>
             ))}
           </div>
+
+          {/* Home Page Bottom Ad */}
+          <GoogleAd 
+            slot="home-bottom" 
+            className="mt-16"
+            format="auto"
+          />
         </section>
       )}
     </div>
